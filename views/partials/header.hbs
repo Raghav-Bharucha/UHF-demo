@@ -1,0 +1,118 @@
+<!--
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <p style="color:rgb(238, 255, 0); font-size:25px;">Urban Home Facility</p>
+      </a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/shopping-cart/">
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+             Shopping Cart
+             <span class="badge">{{session.cart.totalQty}}</span>
+          </a>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+         <span class="glyphicon glyphicon-user"></span>User Management <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          {{# if login }}
+              <li><a href="/user/profile">User Profile</a></li>
+              <li><a href="/user/logout">Logout</a></li>
+            {{ else }}
+              <li><a href="/user/signup">SignUp</a></li>
+              <li><a href="/user/signin">SignIn</a></li>
+          {{/if}}
+          
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+
+		.topnav {
+		  overflow: hidden;
+		  background-color: black;
+		}
+
+		.topnav a {
+		  float: left;
+		  color: #ffff33;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		  font-size: 19px;
+		  font-family: Arial Black;
+		}
+
+		.topnav a:hover {
+		  background-color: yellow;
+		  color: black;
+		}
+
+		.topnav a.active {
+		  background-color: #4CAF50;
+		  color: white;
+		}
+
+	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<title>Home Page</title>
+</head>
+<body>
+
+	<div style="background-color: black; padding-top: 10px; padding-bottom: 10px;">
+
+		<label style=" font-size: 50px; padding-left: 1%; font-family: Tahoma; color: #ffff33">
+			Urban Home F@cility
+		</label>
+    <br/>
+
+    <label style=" font-size: 15px; padding-left: 1%; font-family: Georgia; color: yellow">
+			urban.homefacility@gmail.com
+		</label>
+		<br/>
+
+    <label style="color: white; font-size: 15px; padding-left: 1%; font-family: Georgia; color: black">
+			<a href="https://www.google.com"><img src="\images\google.png" alt="googless" height="27" width="27"></a>
+			<a href="https://www.gmail.com"><img src="\images\gmail.png" alt="gmail" height="25" width="25"></a>
+			<a href="https://www.instagram.com"><img src="\images\instag.png" alt="insta" height="25" width="25"></a>
+			<a href="https://www.facebook.com"><img src="\images\fb.png" alt="fb" height="25" width="25"></a>
+		</label>
+
+		<br/>
+		
+	</div>
+
+	</div>
+
+	<div class="topnav">
+    <a href="/"/>Home</a>
+		<a href="/shopping-cart"/>Booking<span class="badge">{{session.cart.totalQty}}</span> </a>
+    {{# if login }}
+        <a href="/user/profile"/>Profile</a>
+        <a href="/user/logout"/>Logout</a>
+      {{ else }}
+        <a href="/user/signup">Registration</a>
+        <a href="/user/signin"/>Login</a>
+    {{/if}}
+		
+	</div>
+ <br/>
+
+</body>
+</html>
+
+  

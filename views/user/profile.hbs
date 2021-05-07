@@ -1,0 +1,16 @@
+<style>
+    body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		  background-color: #ffffcc;
+		}
+</style>
+
+<label style="font-family: Arial Black; color: black;">
+	<img src="\images\profile.png" alt="Smiley face" height="140" width="140">
+	<h1>Hello There....!</h1>
+</label>
+
+{{# each users}}
+	<span class="badge">{{ email }}</span>
+{{/each}}

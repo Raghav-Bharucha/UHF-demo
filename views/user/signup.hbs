@@ -1,0 +1,164 @@
+<!--
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Sign Up</h1>
+        {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages }}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <form action="/user/signup" method="post">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+
+        </form>
+        
+    </div>
+</div>
+-->
+
+<head>
+
+	<style type="text/css">
+
+    body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		  background-color: #ffffcc;
+		}
+
+.form_bg {
+				background-color: #c4ff4d;
+                background-position: center;
+                color:#666;
+                padding:30px;
+                border-radius:10px;
+                position: absolute;
+                border:1px solid #fff;
+                margin: auto;
+                margin-top: 85px;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 420px;
+                height: 380px;
+        }
+
+		input[type=text],input[type=email],input[type=password], select {
+  			width: 100%;
+            height: 35%;
+ 			padding: 12px 20px;
+  			margin: 8px 0;
+  			display: inline-block;
+  			border: 1px solid #ccc;
+  			border-radius: 4px;
+  			box-sizing: border-box;
+
+		}
+
+		input[type=submit] {
+	  		width: 80%;
+	  		background-color: black;
+	  		color: white;
+	  		padding: 14px 20px;
+	  		margin: 8px 0;
+	  		border: none;
+	  		border-radius: 4px;
+	  		cursor: pointer;
+		}
+
+	input[type=submit]:hover {
+ 		 background-color: MediumSeaGreen;
+	}
+
+    textarea{
+		resize: none;
+		height: 100px;
+		width: 299px;
+		padding: 12px 20px;
+  		margin: 8px 0;
+  		display: inline-block;
+  		border: 1px solid #ccc;
+  		border-radius: 4px;
+  		box-sizing: border-box;
+  		font-family: Arial, Helvetica, sans-serif;
+	}
+
+</style>
+</head>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Sign Up</h1>
+        {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages }}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <div class="form_bg">
+        <form action="/user/signup" method="post">
+            <center>
+				<font color="black">
+		            <h2 class="text-center">
+						<label style="font-family: Arial Black; color: black">
+							Registration Block
+						</label>		                    
+		            </h2>
+		            <br/>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Name"  required="required">
+                            </td>
+                            <td>
+                                <p style="margin-top: 0%;">
+                                    <br/><br/><input type="text" id="number" name="number" class="form-control"  required="required" placeholder="Contact Number" style="margin-top: -20%;  margin-left: 4%;">
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea id="address" name="address" required="required" placeholder="Address" pattern="[a-zA-Z0-9,.]{4,75}" class="form-control" ></textarea>
+                            </td>
+                            <td>
+                                <p style="margin-top: 0%;"></p>
+                                    <input type="text" id="pincode" name="pincode"  required="required" class="form-control" placeholder="Pincode" style="margin-left: 8px;">
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="email" id="email" name="email"  required="required" class="form-control" placeholder="Email-Id">
+                            </td>
+                            <td>
+                                <p style="margin-top: 0%;">
+                                    <br/><br/><input type="password" id="password" name="password"  required="required" class="form-control" placeholder="Password" style="margin-top: -20%; margin-left: 8px;">
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+
+		            <div class="align-center">
+                        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+		                <br/><input type="submit" value="Submit"/>
+		                </div>
+				</font>
+            </center>
+        </form>
+        </div>
+        
+    </div>
+</div>

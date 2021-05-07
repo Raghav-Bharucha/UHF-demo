@@ -1,0 +1,53 @@
+<style>
+    body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		  background-color: #ffffcc;
+		}
+</style>
+
+{{# if products }}
+<div class="row">
+    <div class="col-sm-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+        <ul class="list-group">
+            {{# each products }}
+            <li class="list-group-item">
+                <span class="badge">{{ this.qty }}</span>
+                <h2><strong>{{ this.item.title }}</strong></h2>
+                    <h2><span class="label label-success">{{ this.price }}</span></h2>
+            <div style="margin-left: 15%; margin-top: -6.4%;">
+               <h1>
+                   <div class="btn-group"> 
+                        <button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" type="button">Option<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/reduce/{{ this.item._id }}">Reduce by 1</a></li>
+                            <li><a href="/remove/{{ this.item._id}}">Remove All</a></li>
+                        </ul>
+                    </div>
+                </h1>
+            </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<br/>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <h2><strong>Total:{{ totalPrice }} </strong></h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+        </div>
+    </div>
+    {{ else }}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <h2>No Any Handymen Booked...!</h2>
+        </div>
+    </div>
+    {{/if}}
+    

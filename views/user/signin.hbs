@@ -1,0 +1,123 @@
+<!--
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Sign In</h1>
+        {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages }}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <form action="/user/signin" method="post">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+
+        </form>
+        
+    </div>
+</div>
+-->
+
+<head>
+
+	<style type="text/css">
+
+    body {
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		  background-color: #ffffcc;
+		}
+
+.form_bg {
+				background-color: #c4ff4d;
+                background-position: center;
+                color:#666;
+                padding:30px;
+                border-radius:10px;
+                position: absolute;
+                border:1px solid #fff;
+                margin: auto;
+                margin-top: 85px;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 380px;
+                height: 320px;
+        }
+
+		input[type=text],input[type=email],input[type=password], select {
+  			width: 100%;
+            height: 35%;
+ 			padding: 12px 20px;
+  			margin: 8px 0;
+  			display: inline-block;
+  			border: 1px solid #ccc;
+  			border-radius: 4px;
+  			box-sizing: border-box;
+
+		}
+
+		input[type=submit] {
+	  		width: 100%;
+	  		background-color: black;
+	  		color: white;
+	  		padding: 14px 20px;
+	  		margin: 8px 0;
+	  		border: none;
+	  		border-radius: 4px;
+	  		cursor: pointer;
+		}
+
+	input[type=submit]:hover {
+ 		 background-color: MediumSeaGreen;
+	}
+</style>
+</head>
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Sign In</h1>
+        {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each messages }}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <div class="form_bg">
+        <form action="/user/signin" method="post">
+            <center>
+				<font color="black">
+		                    <h2 class="text-center">
+									<label style="font-family: Arial Black; color: black">
+										Login Block
+									</label>		                    
+		                    </h2>
+
+		                   	 <br/>
+		                        <input type="email" id="email" name="email"  required="required" class="form-control" placeholder="User Name">
+		                        <br/><br/><input type="password" id="password" name="password"  required="required" class="form-control" placeholder="Password">
+
+		                    <div class="align-center">
+                                <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+		                		<br/><input type="submit" value="Login"/>
+		                    </div>
+				</font>
+            </center>
+
+        </form>
+        </div>
+        
+    </div>
+</div>
