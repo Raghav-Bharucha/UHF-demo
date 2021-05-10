@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 const { route } = require('./routes/index');
 const { Store } = require('express-session');
+const sendMailToUser = require('./send-mail-to-user');
 //var usersRouter = require('./routes/users');
 
 var app = express();
@@ -56,7 +57,7 @@ app.use('/user',userRouter);
 app.use('/', indexRouter);
 
 
-
+app.use('/send-email', sendMailToUser);
 
 //app.use('/',routes);
 // catch 404 and forward to error handler
